@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closePopup = document.getElementById("close-popup");
 
   termsPrivacy.addEventListener("click", () => {
-    privacyPopup.style.display = "block";
+    privacyPopup.style.display = "flex";
     gtag("event", "privacy_policy_view", {
       event_category: "engagement",
       event_label: "privacy_policy",
