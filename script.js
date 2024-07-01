@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const rejectButton = document.getElementById("reject-consent");
 
   function showConsentBanner() {
-    consentBanner.style.display = "block";
+    consentBanner.style.display = "flex";
   }
 
   function hideConsentBanner() {
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   joinWaitlistButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      waitlistPopup.style.display = "block";
+      waitlistPopup.style.display = "flex";
     });
   });
 
