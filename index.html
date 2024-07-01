@@ -40,6 +40,24 @@
       gtag("js", new Date());
       gtag("config", "G-2QERCTMWCD");
     </script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js").then(
+            function (registration) {
+              console.log(
+                "Service Worker registered with scope:",
+                registration.scope
+              );
+            },
+            function (error) {
+              console.log("Service Worker registration failed:", error);
+            }
+          );
+        });
+      }
+    </script>
   </head>
   <body>
     <!-- Consent banner -->
