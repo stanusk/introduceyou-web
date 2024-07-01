@@ -69,34 +69,39 @@ header {
   font-size: 16px;
 }
 
+/* Hero */
+
 .hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
     url("assets/hero.png");
   background-size: cover;
   background-position: center;
   margin-top: var(--header-height);
-  padding: 100px 0;
+  padding: 60px 0;
   overflow: hidden;
 }
 
 .hero .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  text-align: center;
 }
 
 .hero-content {
-  flex: 1;
-  padding-right: 40px;
+  max-width: 100%;
+  padding: 0 20px;
+  margin-bottom: 40px;
 }
 
 .hero h1 {
+  font-size: 36px;
   margin-bottom: 20px;
   color: var(--text-color-light);
 }
 
 .hero p {
-  font-size: 24px;
+  font-size: 18px;
   margin-bottom: 30px;
   color: var(--text-color-light);
 }
@@ -105,36 +110,83 @@ header {
   color: var(--primary-color);
 }
 
+.join-waitlist {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .product-image {
-  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .product-image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
 
+@media (min-width: 768px) {
+  .hero {
+    padding: 100px 0;
+  }
+
+  .hero .container {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  .hero-content {
+    flex: 1;
+    padding-right: 40px;
+    margin-bottom: 0;
+  }
+
+  .hero h1 {
+    font-size: 56px;
+  }
+
+  .hero p {
+    font-size: 24px;
+  }
+
+  .product-image {
+    flex: 1;
+    max-width: none;
+  }
+}
+
+/* Features */
+
 .features {
-  padding: 60px 0;
+  padding: 30px 20px;
   text-align: center;
 }
 
 .features h2 {
   margin-bottom: 10px;
   font-weight: bold;
+  font-size: 24px;
 }
 
 .features .subtitle {
-  font-size: 24px;
+  font-size: 18px;
   color: var(--text-color-lightdark);
   margin-bottom: 30px;
 }
 
 .feature-icons {
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
   margin-bottom: 30px;
 }
 
@@ -142,29 +194,73 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;
-  padding: 20px;
+  width: 100%;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px -2px #10182808, 0px 12px 16px -4px #10182814;
 }
 
 .feature-icon {
-  font-size: 36px;
-  margin-bottom: 15px;
+  font-size: 24px;
+  margin-right: 15px;
+  margin-bottom: 10px;
 }
 
 .feature-item p {
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
   margin: 0;
   font-weight: bold;
 }
 
 .call-to-action {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: normal;
-  margin-top: 40px;
+  margin-top: 30px;
 }
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .features {
+    padding: 60px 0;
+  }
+
+  .features h2 {
+    font-size: 46px;
+  }
+
+  .features .subtitle {
+    font-size: 24px;
+  }
+
+  .feature-icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    width: 200px;
+  }
+
+  .feature-icon {
+    font-size: 36px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .feature-item p {
+    font-size: 18px;
+  }
+
+  .call-to-action {
+    font-size: 24px;
+    margin-top: 40px;
+  }
+}
+
+/* Pricing */
 
 .pricing {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -183,7 +279,8 @@ header {
 
 .pricing-plans {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 
@@ -191,7 +288,8 @@ header {
   background-color: white;
   border-radius: 10px;
   padding: 30px;
-  width: 300px;
+  width: 100%;
+  max-width: 215px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -236,7 +334,7 @@ header {
 }
 
 .plan.highlight {
-  background-color: #b09337;
+  background-color: var(--primary-color);
 }
 
 .plan.highlight h3,
@@ -254,6 +352,21 @@ header {
   border: 1px solid white;
   color: white;
 }
+
+@media (min-width: 768px) {
+  .pricing-plans {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .plan {
+    width: calc(33.33% - 20px);
+    max-width: none;
+  }
+}
+
+/* Q&A */
 
 .qa-section {
   padding: 60px 0;
